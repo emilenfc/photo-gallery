@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:ital,wght@0,700;1,700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  padding: 0 40px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: black;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  gap: 1px;
+  width: 100%;
+  max-width: 1178px;
+}
+
+.container {
+  flex:1;
+  height: 588px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1);
+  filter: grayscale(0);
+  transition: transform 300ms ease;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-direction: column;
+  gap: 10px;
+  backdrop-filter: blur(0px);
+  padding: 40px;
+  padding-bottom: 20px;
+  transition: all ease-in-out 300ms;
+}
+
+.container:hover img{
+  transform: scale(1.02);
+  filter: grayscale(90%);
+  transition: transform 350ms ease, grayscale 300ms ease;
+}
+
+.content:hover{
+  backdrop-filter: blur(9px);
+  transition: all ease-in-out 350ms;
+}
+.subtitle {
+  align-self: baseline;
+  font-size: 20px;
+  font-family: Poppins, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.02px;
+  text-align: center;
+  transform: translateY(15px);
+  color: white;
+}
+
+.title {
+  text-transform: uppercase;
+  font-style: normal;
+  transform: translateY(20px);
+  color: white;
+  font-weight: 800;
+  font-size: 32px;
+  align-self: baseline;
+  font-family: "Sofia Sans Extra Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+
+}
+.content:hover .title {
+  transform: translateY(0px);
+  transition: transform ease-in-out 300ms;
+}
+.content:hover .subtitle {
+  transform: translateY(0px);
+  transition: transform ease-in-out 300ms;
+}
+.content:hover .button {
+  visibility: visible;
+  transition: visibility ease-in-out 300ms;
+}
+.button {
+  align-self: baseline;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16.02px;
+  text-align: left;
+  color: lightseagreen;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: default;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    padding: 50px;
+  }
+  .button,
+  .title,
+  .subtitle{
+    display: none;
+  }
+
+}
